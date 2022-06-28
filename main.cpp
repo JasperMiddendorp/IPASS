@@ -11,15 +11,13 @@ int main (){
 
     auto oled = SSD1306(scl, sda);
 
-
     for (;;) {
         int hum = chip.readHum();
         int temp = chip.readTemp();
-        hwlib::string<15> humString = "Hum: ";
-        hwlib::string<15> tempString = "Temp: ";
 
-        oled.printTop(humString, hum);,
-        oled.printBottom(tempString, temp);
+        oled.printTemp(temp);
+        oled.printHum(hum);
+
 //        hwlib::cout << "Hum: "
 //        << hum
 //        << "%\n"
