@@ -1,5 +1,6 @@
 #include "hwlib.hpp"
 #include "SI7021.h"
+#include "SSD1306.h"
 
 int main (){
 
@@ -8,15 +9,23 @@ int main (){
     auto chip = SI7021(scl, sda);
     chip.setMode();
 
+    auto oled = SSD1306(scl, sda);
+
 
     for (;;) {
-        hwlib::cout << "Hum: "
-        << chip.readHum()
-        << "%\n"
-        << "Temp: "
-        << chip.readTemp()
-        << "C\n";
-        hwlib::wait_ms(500);
+        int hum = chip.readHum();
+        int temp = chip.readTemp();
+        hwlib::string<15> humString = "Hum: ";
+        hwlib::string<15> tempString = "Temp: ";
+
+        oled.printTop(humString, hum);,
+        oled.printBottom(tempString, temp);
+//        hwlib::cout << "Hum: "
+//        << hum
+//        << "%\n"
+//        << "Temp: "
+//        << temp
+//        << "C\n";
     }
 
 
