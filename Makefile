@@ -9,10 +9,10 @@
 #############################################################################
 
 # source files in this project (main.cpp is automatically assumed)
-SOURCES := SI7021.cpp SSD1306.cpp
+SOURCES := SI7021.cpp SSD1306.cpp Servo.cpp
 
 # header files in this project
-HEADERS := SI7021.h SSD1306.h
+HEADERS := SI7021.h SSD1306.h Servo.h
 
 # other places to look for files for this project
 SEARCH  := 
