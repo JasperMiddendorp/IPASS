@@ -1,0 +1,40 @@
+\hypertarget{_s_i7021_8h_source}{}\doxysection{SI7021.\+h}
+\mbox{\hyperlink{_s_i7021_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef V1OOPC\_EXAMPLES\_SI7021\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define V1OOPC\_EXAMPLES\_SI7021\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}hwlib.hpp"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define ADDRESS 0x40}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define MEASURE\_HUM\_NOHOLD 0xF5}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define MEASURE\_TEMP\_NOHOLD 0xF3}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define WRITE\_REGISTER 0xE6}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define READ\_REGISTER 0xE7}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_s_i7021}{SI7021}} \{}
+\DoxyCodeLine{19 \textcolor{keyword}{private}:}
+\DoxyCodeLine{20     hwlib::i2c\_bus\_bit\_banged\_scl\_sda bus;}
+\DoxyCodeLine{21     uint8\_t address = ADDRESS;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{29     uint8\_t readRegister();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} writeRegister(uint8\_t \textcolor{keywordtype}{byte});}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{46     uint16\_t readData(uint8\_t command);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{public}:}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{55     \mbox{\hyperlink{class_s_i7021_ab567e77502ce81800aa1d99ae638e6e7}{SI7021}}(hwlib::target::pin\_oc \& scl, hwlib::target::pin\_oc \& sda) : bus(hwlib::i2c\_bus\_bit\_banged\_scl\_sda(scl, sda)) \{\}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{63     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_s_i7021_a27d888c18c594b90a278be053152f624}{readTemp}}();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_s_i7021_a92af8073712c24b31723a1beda13a316}{readHum}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_i7021_aef0d0af6d00ac09686353befd508ad92}{setMode}}();}
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -16,27 +16,14 @@ void SI7021::writeRegister(uint8_t byte) {
         wtrans.write(byte);}
 }
 
-int SI7021::readTemp() {
-    uint16_t temp = readData(MEASURE_TEMP_NOHOLD);
-    float result = ((175.72*temp/65536)-46.85);
-    return int(result);
-}
-
-int SI7021::readHum()
-{
-    uint16_t Hum = readData(MEASURE_HUM_NOHOLD);
-    float result = ((125.0*Hum/65536)-6);
-    return int(result);
-}
-
 uint16_t SI7021::readData(uint8_t command) {
-    uint8_t results[3];
+    uint8_t results[2];
 
     { hwlib::i2c_write_transaction wtrans = ((hwlib::i2c_bus*)(&bus))->write(address);
         wtrans.write(command);}
     hwlib::wait_ms(100);
     { hwlib::i2c_read_transaction rtrans = ((hwlib::i2c_bus*)(&bus))->read(address);
-        rtrans.read(results, 3);}
+        rtrans.read(results, 2);}
 
     uint8_t msb = results[0];
     uint8_t lsb = results[1];
@@ -44,6 +31,18 @@ uint16_t SI7021::readData(uint8_t command) {
     unsigned int data = msb << 8 | lsb;
 
     return data;
+}
+
+int SI7021::readTemp() {
+    uint16_t temp = readData(MEASURE_TEMP_NOHOLD);
+    float result = ((175.72*temp/65536)-46.85);
+    return int(result);
+}
+
+int SI7021::readHum(){
+    uint16_t Hum = readData(MEASURE_HUM_NOHOLD);
+    float result = ((125.0*Hum/65536)-6);
+    return int(result);
 }
 
 void SI7021::setMode() {

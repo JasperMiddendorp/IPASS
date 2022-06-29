@@ -1,0 +1,46 @@
+\hypertarget{_s_s_d1306_8h_source}{}\doxysection{SSD1306.\+h}
+\mbox{\hyperlink{_s_s_d1306_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef V1OOPC\_EXAMPLES\_SSD1306\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define V1OOPC\_EXAMPLES\_SSD1306\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}hwlib.hpp"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_s_s_d1306}{SSD1306}} \{}
+\DoxyCodeLine{14 \textcolor{keyword}{private}:}
+\DoxyCodeLine{15     hwlib::i2c\_bus\_bit\_banged\_scl\_sda bus;}
+\DoxyCodeLine{16     hwlib::glcd\_oled oled = hwlib::glcd\_oled(bus, 0x3c);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     hwlib::window\_part\_t topScreen = hwlib::window\_part\_t(oled, hwlib::xy(5,28), hwlib::xy(63, 64));}
+\DoxyCodeLine{19     hwlib::window\_part\_t bottomScreen = hwlib::window\_part\_t(   oled, hwlib::xy(70,28), hwlib::xy(128, 64));}
+\DoxyCodeLine{20     hwlib::window\_part\_t headerScreen = hwlib::window\_part\_t(oled, hwlib::xy(10,0), hwlib::xy(128, 10));}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     hwlib::font\_default\_8x8 font8 = hwlib::font\_default\_8x8();}
+\DoxyCodeLine{23     hwlib::font\_default\_16x16 font16 = hwlib::font\_default\_16x16();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     hwlib::terminal\_from top = hwlib::terminal\_from(topScreen, font16);}
+\DoxyCodeLine{26     hwlib::terminal\_from bottom = hwlib::terminal\_from(bottomScreen, font16);}
+\DoxyCodeLine{27     hwlib::terminal\_from header = hwlib::terminal\_from(headerScreen, font8);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{39     \mbox{\hyperlink{class_s_s_d1306_a86c53f08034d6a91cd42b75ed748cfb9}{SSD1306}}(hwlib::target::pin\_oc \& scl, hwlib::target::pin\_oc \& sda) : bus(hwlib::i2c\_bus\_bit\_banged\_scl\_sda(scl, sda)) \{}
+\DoxyCodeLine{40         \mbox{\hyperlink{class_s_s_d1306_a3cb21a0438448e962ef1c61e9e1e69d2}{clear}}(top);}
+\DoxyCodeLine{41         \mbox{\hyperlink{class_s_s_d1306_a3cb21a0438448e962ef1c61e9e1e69d2}{clear}}(bottom);}
+\DoxyCodeLine{42         \mbox{\hyperlink{class_s_s_d1306_a3cb21a0438448e962ef1c61e9e1e69d2}{clear}}(header);}
+\DoxyCodeLine{43         header << \textcolor{stringliteral}{"{}Temp:    Hum:"{}} << hwlib::flush;}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_s_d1306_a951e7e59d12d35206ca72b523e1f55d3}{printTemp}}(\textcolor{keywordtype}{int} temp);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_s_d1306_aa9af04325c6e4e8b2d90a95b1b9cc252}{printHum}}(\textcolor{keywordtype}{int} hum);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_s_d1306_a3cb21a0438448e962ef1c61e9e1e69d2}{clear}}(hwlib::terminal\_from \& screen);}
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

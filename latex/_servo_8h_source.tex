@@ -1,0 +1,30 @@
+\hypertarget{_servo_8h_source}{}\doxysection{Servo.\+h}
+\mbox{\hyperlink{_servo_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef V1OOPC\_EXAMPLES\_SERVO\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define V1OOPC\_EXAMPLES\_SERVO\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}hwlib.hpp"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_servo}{Servo}} \{}
+\DoxyCodeLine{12 \textcolor{keyword}{private}:}
+\DoxyCodeLine{13     hwlib::servo\_background servo;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{21     \mbox{\hyperlink{class_servo_ab4ddf6d68750001938748d38e93ec042}{Servo}}(hwlib::pin\_out \& pin) : servo(pin) \{\}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_servo_a001f95fee020e5f10a01d1a8c2a86e77}{writeTemp}}(\textcolor{keywordtype}{int} temperature);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_servo_a825fd99103aed268b0f25373d5a27abf}{writeHum}}(\textcolor{keywordtype}{int} humidity);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{43     \textcolor{keyword}{static} \textcolor{keywordtype}{long} \mbox{\hyperlink{class_servo_a92c45f546786ef5532d353207a8b9bdb}{map}}(\textcolor{keywordtype}{long} x, \textcolor{keywordtype}{long} in\_min, \textcolor{keywordtype}{long} in\_max, \textcolor{keywordtype}{long} out\_min, \textcolor{keywordtype}{long} out\_max) \{}
+\DoxyCodeLine{44         \textcolor{keywordflow}{return} (x -\/ in\_min) * (out\_max -\/ out\_min) / (in\_max -\/ in\_min) + out\_min;}
+\DoxyCodeLine{45     \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

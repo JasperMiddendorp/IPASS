@@ -1,0 +1,79 @@
+\hypertarget{class_s_s_d1306}{}\doxysection{SSD1306 Class Reference}
+\label{class_s_s_d1306}\index{SSD1306@{SSD1306}}
+
+
+\mbox{\hyperlink{class_s_s_d1306}{SSD1306}} Oled klasse.  
+
+
+
+
+{\ttfamily \#include $<$SSD1306.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_s_d1306_a86c53f08034d6a91cd42b75ed748cfb9}{SSD1306}} (hwlib\+::target\+::pin\+\_\+oc \&scl, hwlib\+::target\+::pin\+\_\+oc \&sda)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_s_d1306_a951e7e59d12d35206ca72b523e1f55d3}{print\+Temp}} (int temp)
+\begin{DoxyCompactList}\small\item\em Print Temperatuur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_s_d1306_aa9af04325c6e4e8b2d90a95b1b9cc252}{print\+Hum}} (int hum)
+\begin{DoxyCompactList}\small\item\em Print Humidity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_s_d1306_a3cb21a0438448e962ef1c61e9e1e69d2}{clear}} (hwlib\+::terminal\+\_\+from \&screen)
+\begin{DoxyCompactList}\small\item\em Clear. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_s_s_d1306}{SSD1306}} Oled klasse. 
+
+Dit is een klasse die de \mbox{\hyperlink{class_s_s_d1306}{SSD1306}} 128x64 aanstuurt. Deze klasse is speciaal gemaakt om 2 waardes naast elkaar weer te geven, met daarboven text wat het is. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_s_d1306_a86c53f08034d6a91cd42b75ed748cfb9}\label{class_s_s_d1306_a86c53f08034d6a91cd42b75ed748cfb9}} 
+\index{SSD1306@{SSD1306}!SSD1306@{SSD1306}}
+\index{SSD1306@{SSD1306}!SSD1306@{SSD1306}}
+\doxysubsubsection{\texorpdfstring{SSD1306()}{SSD1306()}}
+{\footnotesize\ttfamily SSD1306\+::\+SSD1306 (\begin{DoxyParamCaption}\item[{hwlib\+::target\+::pin\+\_\+oc \&}]{scl,  }\item[{hwlib\+::target\+::pin\+\_\+oc \&}]{sda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+In de constructor geef je twee hwlib waardes mee, de SCL pin en de SDA. De constructor zet het om naar een bit banged i2c bus. Ook wordt er bij het aanmaken alle schermen geleegd en wordt de tekst aan de bovenkant weergegeven en nooit meer refreshed. Dit zorgt ervoor dat het scherm niet steeds dat deel hoeft te updaten en dus ook niet knippert. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_s_d1306_a3cb21a0438448e962ef1c61e9e1e69d2}\label{class_s_s_d1306_a3cb21a0438448e962ef1c61e9e1e69d2}} 
+\index{SSD1306@{SSD1306}!clear@{clear}}
+\index{clear@{clear}!SSD1306@{SSD1306}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void SSD1306\+::clear (\begin{DoxyParamCaption}\item[{hwlib\+::terminal\+\_\+from \&}]{screen }\end{DoxyParamCaption})}
+
+
+
+Clear. 
+
+Deze functie heeft als argument één terminal (deel van het scherm) en leegt dat terminal. \mbox{\Hypertarget{class_s_s_d1306_aa9af04325c6e4e8b2d90a95b1b9cc252}\label{class_s_s_d1306_aa9af04325c6e4e8b2d90a95b1b9cc252}} 
+\index{SSD1306@{SSD1306}!printHum@{printHum}}
+\index{printHum@{printHum}!SSD1306@{SSD1306}}
+\doxysubsubsection{\texorpdfstring{printHum()}{printHum()}}
+{\footnotesize\ttfamily void SSD1306\+::print\+Hum (\begin{DoxyParamCaption}\item[{int}]{hum }\end{DoxyParamCaption})}
+
+
+
+Print Humidity. 
+
+Deze functie heeft als argument één integer (in dit geval \textquotesingle{}humidity\textquotesingle{}) nodig. Dat geeft hij dan weer op het rechter kant van het scherm. \mbox{\Hypertarget{class_s_s_d1306_a951e7e59d12d35206ca72b523e1f55d3}\label{class_s_s_d1306_a951e7e59d12d35206ca72b523e1f55d3}} 
+\index{SSD1306@{SSD1306}!printTemp@{printTemp}}
+\index{printTemp@{printTemp}!SSD1306@{SSD1306}}
+\doxysubsubsection{\texorpdfstring{printTemp()}{printTemp()}}
+{\footnotesize\ttfamily void SSD1306\+::print\+Temp (\begin{DoxyParamCaption}\item[{int}]{temp }\end{DoxyParamCaption})}
+
+
+
+Print Temperatuur. 
+
+Deze functie heeft als argument één integer (in dit geval \textquotesingle{}temperatuur\textquotesingle{}) nodig. Dat geeft hij dan weer op het linker kant van het scherm. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_s_d1306_8h}{SSD1306.\+h}}\item 
+SSD1306.\+cpp\end{DoxyCompactItemize}

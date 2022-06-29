@@ -21,14 +21,15 @@ int main (){
         int hum = chip.readHum();
         int temp = chip.readTemp();
 
+        oled.printTemp(temp);
+        oled.printHum(hum);
+        
         hwlib::wait_ms(250);
         humServo.writeHum(hum);
         hwlib::wait_ms(100);
         tempServo.writeTemp(temp);
         hwlib::wait_ms(250);
 
-        oled.printTemp(temp);
-        oled.printHum(hum);
     }
 
 
